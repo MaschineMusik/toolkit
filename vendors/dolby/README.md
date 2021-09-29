@@ -1,6 +1,8 @@
 # dolby.io
 
-[Dolby](https://dolby.io/) offers on-line audio tools incliuding the [Media Enhance API ](https://docs.dolby.io/media-apis/reference/media-enhance-overview) 
+[Dolby](https://dolby.io/) offers on-line audio tools incliuding
+- [Media Analyze API ](https://docs.dolby.io/media-apis/docs/quick-start-to-analyzing-media)  
+-  [Media Enhance API ](https://docs.dolby.io/media-apis/reference/media-enhance-overview) 
 
 
 ## API Key
@@ -41,36 +43,12 @@ Now you can upload
 curl -X PUT ${PRE_SIGNED_URL} -T ./example.wav
 ```
 
-## Enhance
+## Run Job
 
-```bash
-curl --request POST \
-     --url https://api.dolby.com/media/enhance \
-     --header 'Accept: application/json' \
-     --header 'Content-Type: application/json' \
-     --header "x-api-key: ${DOLBYIO_API_KEY}" \
-     --data '
-{
-     "content": {
-          "type": "music"
-     },
-     "audio": {
-          "loudness": {
-               "enable": true,
-               "target_level": -8
-          },
-          "music": {
-               "detection": {
-                    "enable": true
-               }
-          }
-     },
-     "input": "dlb://in/example.wav",
-     "output": "dlb://out/example-enhanced.wav"
-}
-'
+See:
 
-```
+- [Analyze](../../analyze/dolby/README.md)
+- [Enhance](../../master/dolby/README.md)
 
 This will start a job and return a Job Id
 
@@ -102,3 +80,4 @@ curl  -X GET "https://api.dolby.com/media/output?url=dlb://out/example-enhanced.
 ```
 
 This will save the file locally
+

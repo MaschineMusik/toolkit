@@ -2,6 +2,9 @@
 A toolkit of gears and cogs for The Maschine
 
 
-## mastering
+## analyze
 
-- [dolby.io](./mastering/dolby/README.md)
+- [dolby.io](./analyze/dolby/README.md)
+## master
+
+- [dolby.io](./master/dolby/README.md)
