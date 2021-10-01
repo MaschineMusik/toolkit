@@ -38,3 +38,18 @@ curl --request POST \
 ```
 This will start a job and return a Job Id
 
+# Scripts
+
+convention
+- input filename in `./in`
+- output will be downloaded to `./out`
+
+```bash
+export DOLBYIO_API_KEY=xxx
+export AUDIO_FILE=fur-elise.mp3
+
+./upload.sh 
+export DOLBYIO_JOB_ID=$(./enhance.sh)
+./job_status.sh
+./download.sh 
+```
